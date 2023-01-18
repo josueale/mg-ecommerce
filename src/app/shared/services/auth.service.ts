@@ -4,10 +4,10 @@ import { Router } from '@angular/router';
 import { of, tap } from 'rxjs';
 
 import API from '../types/api.types';
+import { AppContext, LoginForm, RegisterForm } from '../types/auth.types';
 import { User, UserLogin } from '../types/user.types';
 
 import { environment } from '../../environments/environments';
-import { AppContext, LoginForm, RegisterForm } from '../types/auth.types';
 import { StorageService } from './storage.service';
 
 
@@ -37,8 +37,11 @@ export class AuthService {
   validateAuthorization() {
     const token = this.storageSrv.getUser();
 
-    if (!token) return of(false);
+    if (!token) {
+      return of(false)
+    };
 
+    this.loginByToken(token).subscribe()
     return of(true);
 
     // huh?
