@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { ProductCardComponent } from './pages/home/components/product-card/product-card.component';
+import { UserCartCounterComponent } from './shared/components/navbar/components/user-cart-counter/user-cart-counter.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    UserCartCounterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
