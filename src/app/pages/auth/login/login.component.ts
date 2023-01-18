@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private authSvc: AuthService,
   ) { }
 
   loginForm: FormGroup = this.fb.group({
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit {
     // TODO validate answer
     // ?  redirect to login???
 
-    // this.authSvc.login(form).subscribe();
+    this.authSvc.login(form).subscribe();
   }
 
 
