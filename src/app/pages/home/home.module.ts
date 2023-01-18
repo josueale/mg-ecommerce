@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { HomeRoutingModule } from './home-routing.module';
 
-import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductCardModule } from './components/product-card/product-card.module';
+// import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
@@ -13,8 +14,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ProductCardComponent,
-    // ProductCardModule,
+    // ProductCardComponent,
+    ProductCardModule,
   ]
 })
 export class HomeModule { }
