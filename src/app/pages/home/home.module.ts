@@ -2,8 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 
-import { ProductCardComponent } from './components/product-card/product-card.component';
 import { HomeRoutingModule } from './home-routing.module';
+
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 @NgModule({
