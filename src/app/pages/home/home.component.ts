@@ -16,9 +16,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.route.data.subscribe(({ response }) => {
+    this.route.data.subscribe(({ response }) => {
       console.log(response.value);
-    }));
+    });
 
 
   }
