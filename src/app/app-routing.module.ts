@@ -16,10 +16,10 @@ const routes: Routes = [
   //   path: 'dashboard',
   // },
 
-  // {
-  //   path: 'auth',
-  //   loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
-  // },
+  {
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
+  },
 
 
 ];
