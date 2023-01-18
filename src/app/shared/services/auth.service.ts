@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   validateAuthorization() {
-    const token = this.storageSrv.getUser();
+    const token = this.storageSrv.get<string>(environment.userKey);
 
     if (!token) {
       return of(false)
@@ -60,12 +60,12 @@ export class AuthService {
   }
 
   saveUser(token: string) {
-    this.storageSrv.saveUser(token)
+    this.storageSrv.save(environment.userKey, token)
   }
 
   logout() {
     this.app = initialState;
-    this.storageSrv.removeUser();
+    this.storageSrv.remove(environment.userKey);
     this.router.navigate(['/']);
   }
 
@@ -129,7 +129,7 @@ export class AuthService {
   initApp() {
     console.log('From on init of app-component');
 
-    const token = this.storageSrv.getUser();
+    const token = this.storageSrv.get<string>(environment.userKey);
 
     if (!token) {
       this.setAppContext(initialState);

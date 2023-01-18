@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/app/environments/environments';
 
-const KEY = 'auth-user'
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +9,17 @@ export class StorageService {
 
   constructor() { }
 
-
-  removeUser() {
-    globalThis.localStorage.removeItem(KEY);
+  remove(key: string) {
+    globalThis.localStorage.removeItem(key);
   }
 
-  public saveUser(token: string) {
-    this.removeUser();
-    globalThis.localStorage.setItem(KEY, JSON.stringify(token));
+  public save(value: any, key: string) {
+    this.remove(key);
+    globalThis.localStorage.setItem(key, JSON.stringify(value));
   }
 
-  public getUser(): string | null {
-    const raw = globalThis.localStorage.getItem(KEY);
+  public get<T>(key: string): T | null {
+    const raw = globalThis.localStorage.getItem(key);
 
     if (raw) {
       return JSON.parse(raw);
@@ -29,8 +28,8 @@ export class StorageService {
     return null;
   }
 
-  public isLogged() {
-    const raw = globalThis.localStorage.getItem(KEY);
+  public isUserLogged() {
+    const raw = globalThis.localStorage.getItem(environment.userKey);
     if (raw) {
       return true;
     }
