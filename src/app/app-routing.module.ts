@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-import { DataServiceService } from './shared/services/data-service.service';
 
 const routes: Routes = [
 
   {
     path: '',
-    resolve: { response: DataServiceService },
     loadChildren: () => import('./pages/store/store.module').then(m => m.StoreModule)
   },
 
