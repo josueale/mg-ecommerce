@@ -17,7 +17,6 @@ import { StoreComponent } from './store.component';
     CommonModule,
     StoreRoutingModule,
     NavbarModule,
-
   ]
 })
 export class StoreModule { }
