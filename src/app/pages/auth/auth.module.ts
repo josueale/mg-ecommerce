@@ -9,22 +9,23 @@ import { LogosModule } from 'src/app/shared/components/logos/logos.module';
 import { SearchBarComponent } from 'src/app/shared/components/navbar/components/search-bar/search-bar.component';
 import { UserAccountComponent } from 'src/app/shared/components/navbar/components/user-account/user-account.component';
 import { UserCartCounterComponent } from 'src/app/shared/components/navbar/components/user-cart-counter/user-cart-counter.component';
-import { NavbarComponent } from 'src/app/shared/components/navbar/navbar.component';
+import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
 
 
 @NgModule({
   declarations: [
     AuthComponent,
-    NavbarComponent,
+
   ],
-  exports: [NavbarComponent],
+  exports: [],
   imports: [
     CommonModule,
     AuthRoutingModule,
     SearchBarComponent,
     UserCartCounterComponent,
     UserAccountComponent,
-    LogosModule
+    LogosModule,
+    NavbarModule
   ]
 })
 export class AuthModule { }

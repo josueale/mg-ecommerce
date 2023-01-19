@@ -8,9 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-import { SearchBarComponent } from './shared/components/navbar/components/search-bar/search-bar.component';
-import { UserAccountComponent } from './shared/components/navbar/components/user-account/user-account.component';
-import { UserCartCounterComponent } from './shared/components/navbar/components/user-cart-counter/user-cart-counter.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +18,6 @@ import { UserCartCounterComponent } from './shared/components/navbar/components/
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
-    UserCartCounterComponent,
-    UserAccountComponent,
-    SearchBarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

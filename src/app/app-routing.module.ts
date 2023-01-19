@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     resolve: { response: DataServiceService },
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./pages/store/store.module').then(m => m.StoreModule)
   },
 
   {

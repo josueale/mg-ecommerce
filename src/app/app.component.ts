@@ -3,7 +3,7 @@ import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
   title = 'mg-ecommerce';

@@ -6,15 +6,17 @@ import { HomeRoutingModule } from './home-routing.module';
 
 // import { ProductCardModule } from './components/product-card/product-card.module';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { HomeComponent } from './home.component';
 
 
 @NgModule({
   declarations: [
-    // ProductCardComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+
     ProductCardComponent,
     // ProductCardModule,
   ]
