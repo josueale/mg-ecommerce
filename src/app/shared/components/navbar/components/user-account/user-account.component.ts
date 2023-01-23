@@ -6,12 +6,12 @@ import { Instance } from '@popperjs/core/lib/popper-lite';
 
 import { AuthService } from 'src/app/shared/services/auth.service';
 
-import { LoginComponent } from '../../../forms/login/login.component';
+import { FormLoginComponent } from '../../../forms/login/login.component';
 
 @Component({
   selector: 'app-user-account',
   standalone: true,
-  imports: [CommonModule, LoginComponent],
+  imports: [CommonModule, FormLoginComponent],
   templateUrl: './user-account.component.html',
 })
 export class UserAccountComponent {

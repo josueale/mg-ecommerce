@@ -11,6 +11,32 @@
     </span>
 
   </div>
+
+
+  <div id="account-component-dropdown" #userDropdown
+    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+    data-popper-placement="bottom">
+
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+      </li>
+
+    </ul>
+
+    <div class="py-1">
+      <a href="#"
+        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
+        out</a>
+    </div>
+
+  </div>
+
+
 </ng-container>
 
 
@@ -34,28 +60,8 @@
   <div #userDropdown id="account-component-dropdown"
     class="z-10 p-5 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-900 dark:divide-gray-600 border border-white dark:border-gray-700">
 
-    <app-login />
+    <app-login-form />
 
   </div>
-  <!-- <div id="account-component-dropdown" #userDropdown
-    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
-    data-popper-placement="bottom">
-    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-      </li>
-    </ul>
-    <div class="py-1">
-      <a href="#"
-        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-        out</a>
-    </div>
-  </div> -->
 
 </ng-container>

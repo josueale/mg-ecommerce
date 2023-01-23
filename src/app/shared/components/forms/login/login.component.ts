@@ -8,10 +8,10 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
-  selector: 'app-login',
+  selector: 'app-login-form',
   templateUrl: './login.component.html',
 })
-export class LoginComponent {
+export class FormLoginComponent {
 
   constructor(
     private fb: FormBuilder,
