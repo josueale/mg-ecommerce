@@ -34,7 +34,7 @@ export class CartService {
   }
 
   saveCart(token: string) {
-    this.storageSrv.save(environment.cartKey, token)
+    this.storageSrv.save(token, environment.cartKey)
   }
 
 

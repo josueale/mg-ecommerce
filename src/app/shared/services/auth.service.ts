@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   saveUser(token: string) {
-    this.storageSrv.save(environment.userKey, token)
+    this.storageSrv.save(token, environment.userKey)
   }
 
   logout() {
