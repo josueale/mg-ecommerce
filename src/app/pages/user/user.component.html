@@ -1,1 +1,37 @@
-<p>user works!</p>
+<app-navbar />
+
+<div class="w-full h-100 bg-gray-800">
+
+  <main class="h-screen flex container mx-auto">
+
+    <!-- Aside -->
+    <aside class="mt-10 w-60">
+      <ul class="rounded border border-white dark:border-gray-700 h-100 ">
+        <li class="p-5 hover:bg-gray-200 hover:dark:bg-gray-700 ">
+          <a class="text-gray-800 dark:text-gray-200" routerLink="/user" routerLinkActive="dark:text-blue-500"
+            [routerLinkActiveOptions]="{exact:true}">
+            Account
+          </a>
+        </li>
+        <li class="p-5 hover:bg-gray-200 hover:dark:bg-gray-700 ">
+          <a class="text-gray-800 dark:text-gray-200" routerLink="/user/orders" routerLinkActive="dark:text-blue-500">
+            Orders
+          </a>
+        </li>
+        <li class="text-gray-800 dark:text-gray-200 p-5 hover:bg-gray-200 hover:dark:bg-gray-700 ">
+          <a>
+            Sign out
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="container mx-5">
+
+      <!-- Content -->
+      <router-outlet />
+
+    </div>
+
+  </main>
+</div>
