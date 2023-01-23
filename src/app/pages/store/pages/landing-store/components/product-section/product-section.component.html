@@ -1,0 +1,8 @@
+  <section class="container px-5 py-10 mx-auto">
+    <h3 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 dark:text-gray-200 uppercase mt-4 mb-4">
+      {{name}}
+    </h3>
+    <div class="flex flex-wrap columns-3 gap-8 ">
+      <app-product-card *ngFor="let item of items" [item]="item" />
+    </div>
+  </section>

@@ -1,22 +1,12 @@
 <main class=" container mx-auto">
 
-  <section class="w-full bg-blue-500">
-    a
+  <section class="container px-5 py-10 mx-auto text-white">
+    banners
     <!-- <home-slider></home-slider> -->
   </section>
 
-  <section>
-    <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap columns-3 gap-8 ">
+  <app-product-section name="Newest products" [items]="[0,1,2,3,4,5,6,7]" />
+  <app-product-section name="Popular products" [items]="[0,1,2,3,4,5,6,7]" />
 
-        <app-product-card *ngFor="let item of [0,1,2,3,4,5,6]" [item]="item" />
-
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <!-- <app-product-card></app-product-card> -->
-  </section>
 
 </main>

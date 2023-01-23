@@ -6,6 +6,7 @@ import { LandingStoreComponent } from './pages/landing-store/landing-store.compo
 import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent } from './store.component';
 import { ProductCardComponent } from './pages/landing-store/components/product-card/product-card.component';
+import { ProductSectionComponent } from './pages/landing-store/components/product-section/product-section.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ProductCardComponent } from './pages/landing-store/components/product-c
     StoreComponent,
     LandingStoreComponent,
     ProductCardComponent,
+    ProductSectionComponent,
 
   ],
   imports: [
