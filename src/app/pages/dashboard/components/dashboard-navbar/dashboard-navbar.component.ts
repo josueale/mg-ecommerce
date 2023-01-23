@@ -10,14 +10,13 @@ import { Instance } from '@popperjs/core/lib/popper-lite';
 })
 export class DashboardNavbarComponent {
 
-  @ViewChild('userMenuButton') userMenuButton !: ElementRef<HTMLButtonElement>
+  @ViewChild('userMenuButton') userMenuButton !: ElementRef<HTMLDivElement>
   @ViewChild('userDropdown') userDropdown !: ElementRef<HTMLDivElement>
 
   private Popper: Instance | null = null
 
 
   dropdownHanlder() {
-    console.log(this.Popper?.state);
 
     if (!this.Popper) {
       this.userDropdown.nativeElement.classList.remove('hidden')
