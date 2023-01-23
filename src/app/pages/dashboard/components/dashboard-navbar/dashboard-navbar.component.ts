@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { createPopper } from '@popperjs/core';
 import { Instance } from '@popperjs/core/lib/popper-lite';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 
 @Component({
@@ -15,6 +16,14 @@ export class DashboardNavbarComponent {
 
   private Popper: Instance | null = null
 
+  constructor(
+    private authSvc: AuthService,
+
+  ) { }
+
+  get auth(): any {
+    return this.authSvc.auth
+  }
 
   dropdownHanlder() {
 
