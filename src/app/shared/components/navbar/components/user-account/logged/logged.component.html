@@ -2,9 +2,9 @@
   class="group flex items-center rounded py-4 -my-4 px-2 -mx-2 hover:bg-slate-800 hover:cursor-pointer ">
 
   <span class="text-gray-300 group-hover:text-gray-100 pr-2">
-    Bienvenido: </span>
+    Welcome: </span>
 
-  <span class="text-gray-300 group-hover:text-gray-100">
+  <span class="text-gray-300 group-hover:text-gray-100 pr-2">
     {{auth.data?.user?.name?.toUpperCase()}}
   </span>
 
@@ -31,13 +31,12 @@
     </li>
 
     <li>
-      <a routerLink="/cuenta" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mi
-        cuenta</a>
+      <a routerLink="/user" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Account</a>
     </li>
 
     <li>
-      <a routerLink="/ordenes"
-        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mis ordenes</a>
+      <a routerLink="/user/orders"
+        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Orders</a>
     </li>
 
     <!-- <li>
