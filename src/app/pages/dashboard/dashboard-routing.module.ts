@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardAnalyticsComponent } from './components/dashboard-analytics/dashboard-analytics.component';
 import { DashboardComponent } from './dashboard.component';
-import { DashboardProductsComponent } from './pages/products/products.component';
+
+import { ProductListComponent } from './pages/products/pages/product-list/product-list.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,9 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', component: DashboardAnalyticsComponent },
-      { path: 'products', component: DashboardProductsComponent }
+
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/new', component: ProductListComponent },
     ]
   },
 

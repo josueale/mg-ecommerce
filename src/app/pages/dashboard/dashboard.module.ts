@@ -9,6 +9,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { DashboardProductsComponent } from './pages/products/products.component';
+import { ProductListComponent } from './pages/products/pages/product-list/product-list.component';
+import { ProductListItemComponent } from './pages/products/pages/product-list/components/product-list-item/product-list-item.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { DashboardProductsComponent } from './pages/products/products.component'
     AnalyticsComponent,
     DashboardProductsComponent,
     DashboardNavbarComponent,
+    ProductListComponent,
+    ProductListItemComponent,
   ],
   imports: [
     CommonModule,
