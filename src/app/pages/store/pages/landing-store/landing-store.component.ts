@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import SwiperCore, { Pagination } from "swiper";
+
+SwiperCore.use([Pagination]);
+
 @Component({
   selector: 'app-landing-store',
   templateUrl: './landing-store.component.html',
