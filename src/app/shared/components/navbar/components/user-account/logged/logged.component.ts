@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Instance, createPopper } from '@popperjs/core';
 
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -7,7 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-user-account-logged',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './logged.component.html',
 
 })
@@ -39,6 +40,10 @@ export class UserAccountLoggedComponent {
       this.Popper = null
     }
 
+  }
+
+  handleLogOut() {
+    this.authSvc.logout()
   }
 
   get auth() {
