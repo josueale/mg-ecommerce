@@ -18,6 +18,10 @@ export class ProductService {
     return this.http.get<API<Product[]>>(`${environment.api}/api/v1/products`)
   }
 
+  deleteProductById(id: string) {
+    return this.http.delete<API<Product>>(`${environment.api}/api/v1/products/${id}`)
+  }
+
   createProduct(data: any) {
     return this.http.post<API<any>>(`${environment.api}/api/v1/products`, data)
   }
