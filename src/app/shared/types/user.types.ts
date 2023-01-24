@@ -16,6 +16,19 @@ export interface UserLogin {
 }
 
 export interface UserContext extends User {
-  token:            string
-  isAuthenticated:  boolean
+  token:            string;
+  isAuthenticated:  boolean;
+}
+
+export type UserList = UserItem[]
+
+export interface UserItem{
+  _id:        string;
+  name:       string;
+  lastname:   string;
+  email:      string;
+  profile:    string;
+  createdAt:  string;
+  updatedAt:  string;
+  is_active:  boolean;
 }
