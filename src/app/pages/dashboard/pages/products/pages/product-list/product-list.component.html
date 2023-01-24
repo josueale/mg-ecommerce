@@ -62,10 +62,10 @@
         </td>
 
         <td class="flex items-center px-6 py-4 space-x-3">
-          <!-- TODO redirect to edit page -->
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-          <!-- TODO show sweatAlert to confirm action -->
-          <button (click)="handleDeleteProduct(item._id)" type="button" class="font-medium text-red-600 dark:text-red-500 hover:underline">
+          <a routerLink="/dashboard/products/edit/{{item._id}}"
+            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+          <button (click)="handleDeleteProduct(item._id)" type="button"
+            class="font-medium text-red-600 dark:text-red-500 hover:underline">
             Remove
           </button>
         </td>
@@ -81,13 +81,4 @@
 
 
 <!-- TODO add tooltip on hover -->
-<!-- TODO add routerLink -->
-<div class="fixed z-20 bottom-5 right-5 ">
-  <div class="bg-blue-500 p-5 rounded-full" title="New product">
-    <a routerLink="/dashboard/products/new">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white">
-        <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path>
-      </svg>
-    </a>
-  </div>
-</div>
+<app-floating-button url="/dashboard/products/new" />

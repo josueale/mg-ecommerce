@@ -38,7 +38,14 @@ export class ProductActionComponent {
   getAction() {
     this.route.params.subscribe(params => {
 
-      if (params['action'] !== 'view' || params['action'] !== 'edit') {
+      const validations = [
+        params['action'] === 'view',
+        params['action'] === 'edit',
+      ]
+
+      const isInvalid = validations.every(e => !e)
+
+      if (isInvalid) {
         this.redirectToProductList()
         return
       }
@@ -50,7 +57,6 @@ export class ProductActionComponent {
 
   getId() {
     this.route.params.subscribe(params => {
-
       if (!params['id']) {
         this.redirectToProductList()
         return
