@@ -13,6 +13,10 @@ export class ProductService {
     private http: HttpClient,
   ) { }
 
+  getProducts(){
+    return this.http.get(`${environment.api}/api/v1/products`)
+  }
+
   createProduct(data: any) {
     return this.http.post<API<any>>(`${environment.api}/api/v1/products`, data)
   }
