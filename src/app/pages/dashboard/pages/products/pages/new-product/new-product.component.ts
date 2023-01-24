@@ -32,7 +32,6 @@ export class NewProductComponent {
 
   handleOnSubmit({ value: form }: FormGroup) {
     // TODO validate answer
-    // ?  redirect to login???
     console.log({ form });
 
     this.productSrv.createProduct(form).subscribe(res => {

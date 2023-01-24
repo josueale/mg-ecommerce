@@ -36,7 +36,7 @@
 
     <tbody>
 
-      <tr *ngFor="let item of example"
+      <tr *ngFor="let item of productList "
         class="bg-white w-full border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <td class="w-4 p-4">
           <div class="flex items-center">
@@ -47,14 +47,14 @@
         </td>
 
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {{item.name}}
+          {{item?.title ?? ''}}
         </th>
 
         <td class="px-6 py-4">
           {{item.category}}
         </td>
         <td class="px-6 py-4">
-          {{item.isAvailable }}
+          {{item.in_stock ? 'In stock' : 'Out of stock' }}
         </td>
 
         <td class="px-6 py-4">
@@ -65,7 +65,9 @@
           <!-- TODO redirect to edit page -->
           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
           <!-- TODO show sweatAlert to confirm action -->
-          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+          <button (click)="handleDeleteProduct(item._id)" type="button" class="font-medium text-red-600 dark:text-red-500 hover:underline">
+            Remove
+          </button>
         </td>
       </tr>
 

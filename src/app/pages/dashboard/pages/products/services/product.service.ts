@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from 'src/app/environments/environments';
 import API from 'src/app/shared/types/api.types';
+import { Product } from 'src/app/shared/types/product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class ProductService {
     private http: HttpClient,
   ) { }
 
-  getProducts(){
-    return this.http.get(`${environment.api}/api/v1/products`)
+  getProducts() {
+    return this.http.get<API<Product[]>>(`${environment.api}/api/v1/products`)
   }
 
   createProduct(data: any) {

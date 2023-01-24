@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Product } from 'src/app/shared/types/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
+
+  productList: Product[] = []
+
+  constructor(
+    private productSvc: ProductService,
+  ) { }
+
   example = [
     { name: 'Apple MacBook Pro 17"', category: 'Laptop', isAvailable: false, price: 2999 },
     { name: 'Microsoft Surface Pro', category: 'Laptop PC', isAvailable: false, price: 1999 },
@@ -18,4 +28,18 @@ export class ProductListComponent {
     { name: 'AirTag', category: 'Accessories', isAvailable: false, price: 29 },
 
   ]
+
+  ngOnInit(): void {
+    this.productSvc.getProducts().subscribe(res => {
+
+      console.log(res.value);
+      this.productList = res.value;
+    })
+  }
+
+  handleDeleteProduct(id: string) {
+    console.log({ id });
+
+  }
+
 }
