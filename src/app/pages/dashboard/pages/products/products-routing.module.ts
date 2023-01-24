@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { NewProductComponent } from './pages/new-product/new-product.component';
 import { ProductActionComponent } from './pages/product-action/product-action.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 
 const routes: Routes = [
   // Only support ['edit', 'view']
   { path: '', component: ProductListComponent },
-  { path: 'new', component: NewProductComponent },
+  { path: ':action', component: ProductActionComponent  },
   { path: ':action/:id', component: ProductActionComponent },
 ];
 

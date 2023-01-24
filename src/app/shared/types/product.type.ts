@@ -14,3 +14,10 @@ export interface Product{
   createdAt: string;
   updatedAt: string;
 }
+
+export type Action = 'edit' | 'view' | 'new'
+
+export interface Meta {
+  action: Action
+  id?: string
+}

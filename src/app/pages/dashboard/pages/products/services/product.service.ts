@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from 'src/app/environments/environments';
 import API from 'src/app/shared/types/api.types';
-import { Product } from 'src/app/shared/types/product';
+import { Product } from 'src/app/shared/types/product.type';
 
 @Injectable({
   providedIn: 'root'
