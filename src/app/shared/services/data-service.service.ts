@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { Observable } from 'rxjs';
+import API from '../types/api.types';
+import { HomeContent } from '../types/home.types';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class DataServiceService implements Resolve<unknown>{
     private http: HttpClient
   ) { }
 
-  resolve(): Observable<unknown> {
-    return this.http.get<unknown>('http://localhost:9002/api/v1/products')
+  resolve() {
+    return this.http.get<API<HomeContent>>('http://localhost:9002/api/v1/home')
   }
 }
