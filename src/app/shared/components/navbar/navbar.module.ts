@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar.component';
 
 import { LogosModule } from '../logos/logos.module';
 
+import { RouterLink } from '@angular/router';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { UserAccountComponent } from './components/user-account/user-account.component';
 import { UserCartCounterComponent } from './components/user-cart-counter/user-cart-counter.component';
@@ -22,6 +23,7 @@ import { UserCartCounterComponent } from './components/user-cart-counter/user-ca
     UserAccountComponent,
     SearchBarComponent,
     LogosModule,
+    RouterLink,
   ]
 })
 export class NavbarModule { }
