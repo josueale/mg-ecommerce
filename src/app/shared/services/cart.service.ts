@@ -10,12 +10,14 @@ import { environment } from '../../environments/environments';
 import { StorageService } from './storage.service';
 
 
-const initialState = {
+const initialState: Cart = {
   _id: '',
   products: [],
-  total: 0
-
+  total: 0,
+  subtotal: 0,
 };
+
+type CartOP = Cart | ((prevState: Cart) => Cart);
 
 @Injectable({
   providedIn: 'root',
@@ -37,11 +39,7 @@ export class CartService {
     this.storageSrv.save(token, environment.cartKey)
   }
 
-
-
-  setCartContext(
-    newState: Cart | ((prevState: Cart) => Cart)
-  ) {
+  setCartContext(newState: CartOP) {
     if (typeof newState === 'function') {
       this.context = newState(this.context);
       return;
@@ -53,44 +51,39 @@ export class CartService {
 
   clear() {
     this.context = initialState;
-    // this.storageSrv.removeUser();
-    this.router.navigate(['/']);
   }
 
-  get(cart: string) {
+  get(cart: string | null) {
     return this.clientHttp
       .get<API<Cart>>(`${environment.api}/api/v1/cart`, {
+        // if cart is null, backend will handle it
         headers: {
-          cart_id: cart
+          cart_id: cart ?? ''
         }
       })
       .pipe(
         tap((res) => {
           this.saveCart(res.value._id)
-          this.context = {
+          this.setCartContext({
             _id: res.value._id,
             products: res.value.products,
             total: res.value.total,
-          };
+            subtotal: res.value.subtotal
+          });
         })
       );
   }
 
 
-  initApp() {
-    console.log('From on init of app-component');
+
+
+
+  init() {
+    console.log('From on init of app-component @ cart service');
 
     const cart = this.storageSrv.get<string>(environment.cartKey);
 
-  // Solo si no existe se guarda token
+    this.get(cart).subscribe();
 
-    if (!cart) {
-      this.setCartContext(initialState);
-      return;
-    }
-
-    if (cart) {
-      this.get(cart).subscribe();
-    }
   }
 }
