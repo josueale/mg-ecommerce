@@ -13,6 +13,7 @@ export interface Product{
   comments_id: any[];
   createdAt: string;
   updatedAt: string;
+  quantity?: number;
 }
 
 export type Action = 'edit' | 'view' | 'new'
