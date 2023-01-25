@@ -1,13 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-user-cart-counter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './user-cart-counter.component.html',
 })
 export class UserCartCounterComponent {
+
+  constructor(
+    private cartSvc: CartService,
+
+  ) { }
+
+  get cart() {
+    return this.cartSvc.cart
+  }
+
 
   @ViewChild('drawerContent') drawerContent!: ElementRef<HTMLDivElement>
 
@@ -39,7 +51,5 @@ export class UserCartCounterComponent {
     }
 
   }
-
-  productsCount = 10
 
 }
