@@ -1,21 +1,3 @@
-<div class="relative" (click)="toggleDrawer()">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-    class="fill-gray-300 hover:fill-gray-100">
-    <path
-      d="M5 22h14c1.103 0 2-.897 2-2V9a1 1 0 0 0-1-1h-3V7c0-2.757-2.243-5-5-5S7 4.243 7 7v1H4a1 1 0 0 0-1 1v11c0 1.103.897 2 2 2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-4 3h2v2h2v-2h6v2h2v-2h2l.002 10H5V10z">
-    </path>
-  </svg>
-
-  <div
-    class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -bottom-4 -right-3 dark:border-gray-900">
-    {{productsCount}}
-  </div>
-
-</div>
-
-
-<!-- TODO move it -->
-<!-- drawer component -->
 <div id="drawer-cart-aside" #drawerContent
   class="hidden fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800"
   tabindex="-1" aria-labelledby="drawer-label">
@@ -27,7 +9,7 @@
         clip-rule="evenodd"></path>
     </svg>Info
   </h5>
-  <button type="button" (click)="toggleDrawer()" data-drawer-hide="drawer-cart-aside" aria-controls="drawer-cart-aside"
+  <button type="button" (click)="onClick()" data-drawer-hide="drawer-cart-aside" aria-controls="drawer-cart-aside"
     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd"
@@ -53,6 +35,3 @@
       </svg></a>
   </div>
 </div>
-
-<div (click)="toggleDrawer()" *ngIf="showDrawer"
-  class="bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-30"></div>
