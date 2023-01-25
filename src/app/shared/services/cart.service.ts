@@ -14,6 +14,7 @@ const initialState: Cart = {
   _id: '',
   products: [],
   total: 0,
+  shipping: 0,
   subtotal: 0,
 };
 
@@ -73,6 +74,7 @@ export class CartService {
             _id: res.value._id,
             products: res.value.products,
             total: res.value.total,
+            shipping: res.value.shipping,
             subtotal: res.value.subtotal
           });
         })
@@ -94,6 +96,10 @@ export class CartService {
     })
   }
 
+  // type this
+  checkout(data: any) {
+    this.http.post(`${environment.api}/api/v1/cart/checkout`, data)
+  }
 
 
   init() {
