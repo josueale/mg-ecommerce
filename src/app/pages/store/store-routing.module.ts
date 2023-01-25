@@ -28,8 +28,9 @@ const routes: Routes = [
         },
         component: ProductDetailComponent
       },
-      // { path: 'cart' },
-      // { path: 'cart/checkout' },
+
+      { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
+
       // { path: 'order/:id' },
     ]
   }
