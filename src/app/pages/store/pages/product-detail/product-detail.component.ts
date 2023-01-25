@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
 import { Product } from 'src/app/shared/types/product.type';
 
 @Component({
@@ -10,15 +11,14 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private cartSvc: CartService,
   ) { }
 
   details!: Product
 
-  handleAddToCart(id: string) {
-    console.log(id);
-
+  handleAddToCart(productId: string) {
+    this.cartSvc.addProductToCart({ productId, quantity: 1 })
   }
-
 
   ngOnInit(): void {
     this.route.data.subscribe(({ detail }) => {

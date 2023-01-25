@@ -19,13 +19,18 @@ const initialState: Cart = {
 
 type CartOP = Cart | ((prevState: Cart) => Cart);
 
+interface DataValue {
+  productId: string
+  quantity: number
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   constructor() { }
 
-  private clientHttp = inject(HttpClient);
+  private http = inject(HttpClient);
   private storageSrv = inject(StorageService);
   private router = inject(Router);
 
@@ -54,7 +59,7 @@ export class CartService {
   }
 
   get(cart: string | null) {
-    return this.clientHttp
+    return this.http
       .get<API<Cart>>(`${environment.api}/api/v1/cart`, {
         // if cart is null, backend will handle it
         headers: {
@@ -75,6 +80,19 @@ export class CartService {
   }
 
 
+  addProductToCart(data: DataValue) {
+    console.log(data);
+    this.http.put(
+      `${environment.api}/api/v1/cart`,
+      {
+        product_id: data.productId,
+        quantity: data.quantity,
+        cart_id: this.cart._id
+      }
+    ).subscribe((res) => {
+      this.init()
+    })
+  }
 
 
 
