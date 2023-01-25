@@ -4,4 +4,5 @@ export interface HomeContent {
   banners: any[];
   bestSellers: Product[];
   mostPopular: Product[];
+  newest: Product[];
 }

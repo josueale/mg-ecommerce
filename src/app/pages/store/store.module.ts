@@ -9,6 +9,7 @@ import { LandingStoreComponent } from './pages/landing-store/landing-store.compo
 import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent } from './store.component';
 import { BannerComponent } from './pages/landing-store/components/banner/banner.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { BannerComponent } from './pages/landing-store/components/banner/banner.
     ProductCardComponent,
     ProductSectionComponent,
     BannerComponent,
+    ProductDetailComponent,
 
   ],
   imports: [

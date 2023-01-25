@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/shared/types/product.type';
 
 @Component({
   selector: 'app-product-card',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductCardComponent {
 
-  @Input() item: any
+  @Input() item!: Product
 
 }

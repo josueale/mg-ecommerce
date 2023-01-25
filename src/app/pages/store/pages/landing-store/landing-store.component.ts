@@ -17,7 +17,8 @@ export class LandingStoreComponent implements OnInit {
   ) { }
 
   content: HomeContent = {
-    banners:[],
+    banners: [],
+    newest: [],
     bestSellers: [],
     mostPopular: []
   }

@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { DataServiceService } from 'src/app/shared/services/data-service.service';
+
 import { LandingStoreComponent } from './pages/landing-store/landing-store.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+
+import { ProductDetailService } from './services/product-detail.service';
 import { StoreComponent } from './store.component';
 
 const routes: Routes = [
@@ -16,7 +21,13 @@ const routes: Routes = [
         component: LandingStoreComponent
       },
       // { path: 'search' },
-      // { path: 'product/:id' },
+      {
+        path: 'product/:id',
+        resolve: {
+          detail: ProductDetailService,
+        },
+        component: ProductDetailComponent
+      },
       // { path: 'cart' },
       // { path: 'cart/checkout' },
       // { path: 'order/:id' },

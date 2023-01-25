@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from 'src/app/shared/types/product.type';
 
 @Component({
   selector: 'app-product-section',
@@ -6,9 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductSectionComponent {
 
-  @Input() items: any[] = []
+  @Input() items: Product[] = []
   @Input() name: string = ''
-
-
 
 }
