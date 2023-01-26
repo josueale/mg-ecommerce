@@ -60,6 +60,7 @@ export class CartService {
   }
 
   get(cart: string | null) {
+    console.log(cart);
     return this.http
       .get<API<Cart>>(`${environment.api}/api/v1/cart`, {
         // if cart is null, backend will handle it
@@ -69,7 +70,13 @@ export class CartService {
       })
       .pipe(
         tap((res) => {
-          this.saveCart(res.value._id)
+
+          const cart = this.storageSrv.get<string>(environment.cartKey);
+
+          if (!cart) {
+            this.saveCart(res.value._id)
+          }
+
           this.setCartContext({
             _id: res.value._id,
             products: res.value.products,
@@ -96,9 +103,36 @@ export class CartService {
     })
   }
 
+  removeProductFromCart(productId: string) {
+    console.log(productId);
+    const cart = this.storageSrv.get<string>(environment.cartKey);
+
+    this.http.delete(
+      `${environment.api}/api/v1/cart/item/${productId}`,
+      {
+        headers: {
+          cart_id: cart ?? ''
+        }
+      }
+    ).subscribe((res) => {
+      this.init()
+    })
+  }
+
   // type this
   checkout(data: any) {
-    this.http.post(`${environment.api}/api/v1/cart/checkout`, data)
+    this.http
+      .post(`${environment.api}/api/v1/cart/checkout`, {
+        cart_id: this.cart._id,
+        user_id: data.user_id,
+        billing_address: data.billing_address,
+      })
+      .subscribe((res) => {
+        console.log(1231, res);
+        // router
+        this.init()
+      })
+
   }
 
 
@@ -107,6 +141,7 @@ export class CartService {
 
     const cart = this.storageSrv.get<string>(environment.cartKey);
 
+    console.log('oktne', cart);
     this.get(cart).subscribe();
 
   }

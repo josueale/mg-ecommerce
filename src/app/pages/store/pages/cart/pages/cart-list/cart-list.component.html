@@ -24,7 +24,7 @@
                 - </span>
               <input class="h-8 w-8 border bg-white text-center text-xs outline-none appearance-none" type="number"
                 [value]="item.quantity" min="1" />
-                <!-- TODO add functions -->
+              <!-- TODO add functions -->
               <span
                 class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">
                 + </span>
@@ -32,10 +32,13 @@
 
             <div class="flex items-center space-x-4">
               <p class="text-sm text-gray-800 dark:text-gray-200 ">{{ item.quantity * item.price | number }} USD</p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                class="h-5 w-5 cursor-pointer duration-150 fill-slate-100 hover:text-red-500">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+
+              <span (click)="handleDeleteItem(item._id)">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                  class="h-5 w-5 cursor-pointer duration-150 fill-slate-100 hover:text-red-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </span>
             </div>
 
           </div>

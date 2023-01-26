@@ -16,4 +16,8 @@ export class CartListComponent {
     return this.cartSrv.cart
   }
 
+  handleDeleteItem(productId: string) {
+    this.cartSrv.removeProductFromCart(productId)
+  }
+
 }
