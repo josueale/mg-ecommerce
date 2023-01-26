@@ -30,6 +30,10 @@ export class ProductService {
     return this.http.get<API<Product>>(`${environment.api}/api/v1/products/${id}`)
   }
 
+  updateProduct(data: any) {
+    return this.http.put<API<Product>>(`${environment.api}/api/v1/products`, data)
+  }
+
   createProduct(data: any) {
     return this.http.post<API<any>>(`${environment.api}/api/v1/products`, data)
   }

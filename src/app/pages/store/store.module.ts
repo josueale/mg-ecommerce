@@ -11,6 +11,7 @@ import { LandingStoreComponent } from './pages/landing-store/landing-store.compo
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { StoreRoutingModule } from './store-routing.module';
 import { StoreComponent } from './store.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { StoreComponent } from './store.component';
     ProductSectionComponent,
     BannerComponent,
     ProductDetailComponent,
+    SearchComponent,
 
   ],
   imports: [
@@ -28,8 +30,6 @@ import { StoreComponent } from './store.component';
     StoreRoutingModule,
     NavbarModule,
     SwiperModule,
-
-
 
   ]
 })

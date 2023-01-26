@@ -125,22 +125,25 @@ export class ProductActionComponent {
     }
 
     if (this.meta.action === 'new') {
-      this.productSrv.createProduct(form).subscribe(res => {
+      this
+        .productSrv
+        .createProduct(form)
+        .subscribe(res => {
+          if (res.isSuccess && shouldRedirect) {
+            this.redirect()
+          }
+        })
 
-        if (res.isSuccess && shouldRedirect) {
-          this.redirect()
-        }
-
-      })
     } else {
+      this
+        .productSrv
+        .updateProduct({ ...form, product_id: this.meta.id })
+        .subscribe(res => {
+          if (res.isSuccess && shouldRedirect) {
+            this.redirect()
+          }
 
-      this.productSrv.createProduct(form).subscribe(res => {
-
-        if (res.isSuccess && shouldRedirect) {
-          this.redirect()
-        }
-
-      })
+        })
     }
 
   }
