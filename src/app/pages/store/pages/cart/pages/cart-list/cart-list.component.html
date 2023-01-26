@@ -31,7 +31,9 @@
             </div>
 
             <div class="flex items-center space-x-4">
-              <p class="text-sm text-gray-800 dark:text-gray-200 ">{{ item.quantity * item.price | number }} USD</p>
+              <p class="text-sm text-gray-800 dark:text-gray-200 ">{{ (item?.quantity ?? 0) * (item?.price ?? 0) |
+                number }}
+                USD</p>
 
               <span (click)="handleDeleteItem(item._id)">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

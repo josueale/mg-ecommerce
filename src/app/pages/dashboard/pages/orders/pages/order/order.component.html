@@ -1,0 +1,45 @@
+<div class="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+
+  <div class="flex justify-start item-start space-y-2 flex-col">
+    <h1 class="text-3xl dark:text-white lg:text-4xl sm:text-md font-semibold leading-7 lg:leading-9 text-gray-800">Order
+      <span class="uppercase">#{{order?._id}}</span>
+    </h1>
+    <p class="text-base dark:text-gray-300 font-medium leading-6 text-gray-600">21st Mart 2021 at 10:34 PM</p>
+  </div>
+
+  <div
+    class="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
+    <div class="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
+
+      <div
+        class="flex flex-col justify-start items-start dark:bg-gray-800 bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
+        <p class="text-lg md:text-xl dark:text-white font-semibold leading-6 xl:leading-5 text-gray-800">Customer’s Cart
+        </p>
+
+
+        <app-order-item style="width: 100%;" *ngFor="let item of order?.cart?.products" [product]="item" />
+
+
+      </div>
+
+
+
+    </div>
+
+    <div
+      class="bg-gray-50 dark:bg-gray-800 w-full xl:w-96 flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
+      <h3 class="text-xl dark:text-white font-semibold leading-5 text-gray-800">Customer</h3>
+
+      <!-- Customer  -->
+      <!-- WHY????????????????????? -->
+      <app-order-customer style="width: 100%;" *ngIf="order?.user" [user]="order?.user!"
+        [address]="order?.billing_address!" />
+
+      <!-- Summary -->
+      <!-- WHY????????????????????? -->
+      <app-order-summary style="width: 100%;" *ngIf="order?.cart" [cart]="order?.cart!" />
+
+    </div>
+
+  </div>
+</div>
