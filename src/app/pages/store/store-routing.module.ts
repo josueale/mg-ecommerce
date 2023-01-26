@@ -21,10 +21,6 @@ const routes: Routes = [
         resolve: { response: DataServiceService },
         component: LandingStoreComponent
       },
-      // { path: 'search' },
-
-      { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
-
 
       {
         path: 'product/:id',
