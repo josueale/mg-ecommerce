@@ -122,14 +122,14 @@ export class CartService {
   // type this
   checkout(data: any) {
     this.http
-      .post(`${environment.api}/api/v1/cart/checkout`, {
+      .post<API<any>>(`${environment.api}/api/v1/cart/checkout`, {
         cart_id: this.cart._id,
         user_id: data.user_id,
         billing_address: data.billing_address,
       })
       .subscribe((res) => {
         console.log(1231, res);
-        // router
+        this.router.navigate([`/orders/${res.value._id}`])
         this.init()
       })
 
