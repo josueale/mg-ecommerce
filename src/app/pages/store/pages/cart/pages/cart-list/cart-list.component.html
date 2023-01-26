@@ -17,15 +17,14 @@
             <p class="mt-1 text-xs text-gray-700 dark:text-gray-400">{{ item.category }}</p>
           </div>
 
-          <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-            <div class="flex items-center border-gray-100">
-              <span
+          <div class="mt-4 flex items-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+            <div class="flex justify-center  border-gray-100">
+              <span (click)="handleDecrement(item._id)"
                 class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50">
                 - </span>
               <input class="h-8 w-8 border bg-white text-center text-xs outline-none appearance-none" type="number"
                 [value]="item.quantity" min="1" />
-              <!-- TODO add functions -->
-              <span
+              <span (click)="handleIncrement(item._id)"
                 class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50">
                 + </span>
             </div>

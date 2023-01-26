@@ -21,8 +21,8 @@ const initialState: Cart = {
 type CartOP = Cart | ((prevState: Cart) => Cart);
 
 interface DataValue {
-  productId: string
-  quantity: number
+  productId?: string
+  quantity?: number
 }
 
 @Injectable({
@@ -100,6 +100,34 @@ export class CartService {
       {
         product_id: data.productId,
         quantity: data.quantity,
+        cart_id: this.cart._id
+      }
+    ).subscribe((res) => {
+      this.init()
+    })
+  }
+
+  incrementProduct(data: DataValue) {
+    console.log(data);
+    this.http.put(
+      `${environment.api}/api/v1/cart`,
+      {
+        product_id: data?.productId ?? '',
+        quantity: 1,
+        cart_id: this.cart._id
+      }
+    ).subscribe((res) => {
+      this.init()
+    })
+  }
+
+  decrementProduct(data: DataValue) {
+    console.log(data);
+    this.http.put(
+      `${environment.api}/api/v1/cart`,
+      {
+        product_id: data?.productId ?? '',
+        quantity: -1,
         cart_id: this.cart._id
       }
     ).subscribe((res) => {

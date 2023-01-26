@@ -20,4 +20,14 @@ export class CartListComponent {
     this.cartSrv.removeProductFromCart(productId)
   }
 
+
+  handleIncrement(productId: string) {
+    this.cartSrv.incrementProduct({ productId })
+  }
+
+  handleDecrement(productId: string) {
+    this.cartSrv.decrementProduct({ productId })
+  }
+
+
 }
