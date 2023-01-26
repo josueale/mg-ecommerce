@@ -1,3 +1,5 @@
+import { Order } from "./order.types";
+
 export interface User {
   _id:       string;
   name:      string;
@@ -32,4 +34,9 @@ export interface UserItem{
   createdAt:  string;
   updatedAt:  string;
   is_active:  boolean;
+}
+
+
+export interface UserForAdmin extends User {
+  orders: Order[]
 }
