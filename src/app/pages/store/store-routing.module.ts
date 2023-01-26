@@ -9,6 +9,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { ProductDetailService } from './services/product-detail.service';
 import { StoreComponent } from './store.component';
 
+
 const routes: Routes = [
 
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
         component: LandingStoreComponent
       },
       // { path: 'search' },
+
+      { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
+
+
       {
         path: 'product/:id',
         resolve: {
@@ -28,10 +33,6 @@ const routes: Routes = [
         },
         component: ProductDetailComponent
       },
-
-      { path: 'cart', loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule) },
-
-      // { path: 'order/:id' },
     ]
   }
 

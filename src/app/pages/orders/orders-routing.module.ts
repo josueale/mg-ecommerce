@@ -2,9 +2,27 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { OrderDetailService } from './services/order-detail.service';
+
+import { OrdersComponent } from './orders.component';
 
 const routes: Routes = [
-  { path: ':id', component: OrderDetailComponent }
+
+  {
+    path: '',
+    component: OrdersComponent,
+    children: [
+
+      {
+        path: ':id',
+        resolve: {
+          order: OrderDetailService,
+        },
+        component: OrderDetailComponent
+      }
+    ]
+  }
+
 ];
 
 @NgModule({

@@ -41,6 +41,10 @@ export class CartService {
     return { ...this.context };
   }
 
+  deleteCart() {
+    this.storageSrv.remove(environment.cartKey)
+  }
+
   saveCart(token: string) {
     this.storageSrv.save(token, environment.cartKey)
   }
@@ -129,7 +133,8 @@ export class CartService {
       })
       .subscribe((res) => {
         console.log(1231, res);
-        this.router.navigate([`/orders/${res.value._id}`])
+        this.router.navigate([`/order/${res.value._id}`])
+        this.deleteCart()
         this.init()
       })
 

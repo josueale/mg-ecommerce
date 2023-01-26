@@ -15,7 +15,7 @@ import { NeedsAuthComponent } from './pages/needs-auth/needs-auth.component';
   declarations: [
     CheckoutComponent,
     CartListComponent,
-    NeedsAuthComponent
+    NeedsAuthComponent,
   ],
   imports: [
     CommonModule,

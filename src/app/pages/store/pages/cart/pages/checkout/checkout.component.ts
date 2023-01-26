@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { CartService } from 'src/app/shared/services/cart.service';
@@ -34,5 +34,7 @@ export class CheckoutComponent {
   onSubmit({ value }: FormGroup) {
     this.cartSvc.checkout({ ...value, user_id: this.auth.data?.user._id })
   }
+
+
 
 }

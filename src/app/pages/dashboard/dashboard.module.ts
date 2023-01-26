@@ -14,9 +14,9 @@ import { AnalyticsComponent } from './pages/analytics/analytics.component';
 @NgModule({
   declarations: [
     DashboardComponent,
+    AnalyticsComponent,
     DashboardAsideComponent,
     DashboardAnalyticsComponent,
-    AnalyticsComponent,
     DashboardNavbarComponent,
   ],
   imports: [
